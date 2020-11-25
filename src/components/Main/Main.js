@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import General from "../General/General"
+import Aside from "../Aside/Aside"
 import { Container, Wrapper } from "../../styled/styled";
 
 const MainBase = styled.main `
@@ -11,7 +13,8 @@ function Main () {
         <MainBase>
             <Container>
                 <Wrapper>
-<div>BASE</div>
+                     <General />
+                     <Aside />
                 </Wrapper>
             </Container>
         </MainBase>
