@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {NavLink} from "react-router-dom"
 
 const HeaderNavMenu = styled.ul `
   width: 50%;
@@ -15,7 +16,7 @@ const HeaderItemMenu = styled.li `
   text-align: center;
 `
 
-const HeaderItemLink = styled.a `
+const HeaderItemLink = styled(NavLink) `
   padding-bottom: 33px;
   border-bottom: 2px solid #3744bd;
   border-radius: 1px;
@@ -26,7 +27,11 @@ const HeaderItemLink = styled.a `
   font-size: 18px;
   line-height: 144.2%;
   color: #fff;
+  transition: all 0.2s;
   &:hover {
+    color: #828282;
+  }
+  &.active {
     border-bottom: 2px solid #fff;
   }
 `
@@ -35,16 +40,16 @@ function HeaderNav () {
 return (
     <HeaderNavMenu>
         <HeaderItemMenu>
-            <HeaderItemLink>Home</HeaderItemLink>
+            <HeaderItemLink to='/' exact={true} activeClassName='active'>Home</HeaderItemLink>
         </HeaderItemMenu>
         <HeaderItemMenu>
-            <HeaderItemLink>Issues</HeaderItemLink>
+            <HeaderItemLink to="/issues">Issues</HeaderItemLink>
         </HeaderItemMenu>
         <HeaderItemMenu>
-            <HeaderItemLink>Filter</HeaderItemLink>
+            <HeaderItemLink to="/filter">Filter</HeaderItemLink>
         </HeaderItemMenu>
         <HeaderItemMenu>
-            <HeaderItemLink>Projects</HeaderItemLink>
+            <HeaderItemLink to="/projects">Projects</HeaderItemLink>
         </HeaderItemMenu>
     </HeaderNavMenu>
     )   
